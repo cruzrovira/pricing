@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+:root {
+  --Linear1: hsl(236, 72%, 79%);
+  --linaer2: hsl(237, 63%, 64%);
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  background: url(../img/bg-top.svg) right top/200px no-repeat,
+    url(../img/bg-bottom.svg) left bottom/200px no-repeat,
+    var(--Very-Light-Grayish-Blue);
+  font-size: 15px;
+  color: var(--Grayish-Blue);
+  font-family: "Montserrat", sans-serif;
+  padding: 0 1.5em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+header p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header input {
+  display: none;
+}
+
+header label {
+  display: inline-block;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 1em;
+  margin: 0em 1em;
+  position: relative;
+  background-image: linear-gradient(var(--Linear1), var(--linaer2));
+  cursor: pointer;
+}
+
+header label::before {
+  content: "";
+  position: absolute;
+  height: 1.8rem;
+  width: 1.8rem;
+  background: white;
+  border-radius: 50%;
+  left: 0.2rem;
+  top: 0.1em;
+  transition: all linear 0.3s;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+input:checked ~ ::before {
+  left: 3rem;
+}
+
+.card {
+  background: white;
+  padding: 2em 3em;
+  text-align: center;
+  margin-bottom: 2em;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.card .price {
+  font-size: 3em;
+  line-height: 1.8em;
+  margin: 0;
+}
+
+.card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.card li {
+  line-height: 3em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.card button {
+  border: 1px solid transparent;
+  margin-top: 2em;
+  width: 100%;
+  line-height: 3em;
+  background: linear-gradient(var(--Linear1), var(--linaer2));
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.card button:hover {
+  background: white;
+  color: var(--linaer2);
+  border: 1px solid var(--linaer2);
+}
+
+.professional {
+  background: linear-gradient(var(--Linear1), var(--linaer2));
+  color: white;
+}
+
+.professional button {
+  background: white;
+  color: var(--linaer2);
+}
+
+.professional button:hover {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.professional ul {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.professional li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+  }
+
+  .card {
+    min-width: 250px;
+  }
+
+  .professional {
+    transform: scale(1.1);
+  }
+}
